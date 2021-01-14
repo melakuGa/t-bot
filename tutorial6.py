@@ -23,8 +23,9 @@ def webhook():
         chat_id     = update.effective_chat.id
         text        = update.message.text
         first_name  = update.effective_chat.first_name
+        
         # Reply with the same message
-        bot.sendMessage(chat_id=chat_id, text=f"we are processing your comand !! "+{first_name}")
+        bot.sendMessage(chat_id=chat_id, text=f"{first_name}")
         return 'ok'
     return 'error'
 
