@@ -3,3 +3,4 @@ flask_session
 gunicorn
 python-telegram-bot
 pafy==0.5.5
+youtube-dl
