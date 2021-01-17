@@ -8,7 +8,6 @@
 #https://seminar.io/2018/09/03/building-serverless-telegram-bot/
 #https://www.heroku.com/
 from flask import Flask, render_template, request
-import pafy
 
 import os
 import telegram
