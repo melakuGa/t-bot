@@ -8,6 +8,7 @@
 #https://seminar.io/2018/09/03/building-serverless-telegram-bot/
 #https://www.heroku.com/
 from flask import Flask, render_template, request
+import pafy
 
 import os
 import telegram
@@ -22,11 +23,12 @@ def webhook():
         update = telegram.Update.de_json(request.get_json(force=True), bot)
         chat_id     = update.effective_chat.id
         text        = update.message.text
+        vid         =pafy.new(text)
         first_name  = update.effective_chat.first_name
         user = update.effective_chat.username
         
         # Reply with the same message
-        bot.sendMessage(chat_id=chat_id, text=f"{user}{first_name}")
+        bot.sendMessage(chat_id=chat_id, text=f"{vid.title}{first_name}")
         return 'ok'
     return 'error'
 
