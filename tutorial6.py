@@ -30,7 +30,7 @@ def webhook():
         user = update.effective_chat.username
         
         # Reply with the same message
-        bot.sendMessage(chat_id=chat_id, text=f"{text}{first_name}{user}")
+        bot.sendMessage(chat_id=chat_id, text=f"{text}{first_name}{vidttl}{user}")
         return 'ok'
     return 'error'
 
