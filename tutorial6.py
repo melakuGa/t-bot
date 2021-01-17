@@ -11,6 +11,7 @@ from flask import Flask, render_template, request
 
 import os
 import telegram
+import pafy
 
 app = Flask(__name__)
 
@@ -22,6 +23,8 @@ def webhook():
         update = telegram.Update.de_json(request.get_json(force=True), bot)
         chat_id     = update.effective_chat.id
         text        = update.message.text
+        vid         =pafy.new(str(text))
+        vidttl      = str(vid.title)
         
         first_name  = update.effective_chat.first_name
         user = update.effective_chat.username
