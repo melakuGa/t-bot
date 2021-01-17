@@ -2,4 +2,4 @@ flask
 flask_session
 gunicorn
 python-telegram-bot
-pafy
+pafy==0.5.5
