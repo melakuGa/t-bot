@@ -22,7 +22,7 @@ def webhook():
     if request.method == "POST":
         update = telegram.Update.de_json(request.get_json(force=True), bot)
         chat_id     = update.effective_chat.id
-        text        = update.message.text
+        text        = str(update.message.text)
         vid         =pafy.new(text)
         first_name  = update.effective_chat.first_name
         user = update.effective_chat.username
