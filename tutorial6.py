@@ -24,11 +24,12 @@ def webhook():
         chat_id     = update.effective_chat.id
         text        = str(update.message.text)
         vid         =pafy.new(text)
+        vidttl      = vid.title
         first_name  = update.effective_chat.first_name
         user = update.effective_chat.username
         
         # Reply with the same message
-        bot.sendMessage(chat_id=chat_id, text=f"{vid.title}{first_name}")
+        bot.sendMessage(chat_id=chat_id, text=f"{vidttl}{first_name}")
         return 'ok'
     return 'error'
 
