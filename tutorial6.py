@@ -33,7 +33,7 @@ def webhook():
         
         # Reply with the same message
         bot.sendMessage(chat_id=chat_id, text=f"{first_name}{vidttl}{user}")
-        bot.sendAudio(chat_id = chat_id, audio = audioUrl, duration = NULL, performer = NULL,title = NULL, caption = NULL, disable_notification =FALSE,reply_to_message_iz= NULL, reply_markup = NULL, parse_mode = NULL)
+        bot.sendAudio(chat_id = chat_id, audio = audioUrl)
         return 'ok'
     return 'error'
 
