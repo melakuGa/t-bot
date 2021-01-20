@@ -25,12 +25,15 @@ def webhook():
         text        = update.message.text
         vid         =pafy.new(str(text))
         vidttl      = str(vid.title)
+        audio       = vid.getbestaudio()
+        audioUrl    = audio.url
         
         first_name  = update.effective_chat.first_name
         user = update.effective_chat.username
         
         # Reply with the same message
         bot.sendMessage(chat_id=chat_id, text=f"{first_name}{vidttl}{user}")
+        bot.sendAudio(chat_id = chat_id, audio = "audioUrl", duration = NULL, performer = NULL,title = NULL, caption = NULL, disable_notification = FALSE,reply_to_message_id = NULL, reply_markup = NULL, parse_mode = NULL)
         return 'ok'
     return 'error'
 
