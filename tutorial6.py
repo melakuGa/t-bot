@@ -33,7 +33,7 @@ def webhook():
         
         # Reply with the same message
         bot.sendMessage(chat_id=chat_id, text=f"{vidttl}{audioUrl}")
-        #bot.sendAudio(chat_id = chat_id, audio = audioUrl)
+        bot.sendAudio(chat_id = chat_id, audio = audioUrl)
         return 'ok'
     return 'error'
 
