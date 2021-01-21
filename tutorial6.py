@@ -32,8 +32,8 @@ def webhook():
         user = update.effective_chat.username
         
         # Reply with the same message
-        bot.sendMessage(chat_id=chat_id, text=f"{first_name}{vidttl}{user}")
-        bot.sendAudio(chat_id = chat_id, audio = audioUrl)
+        bot.sendMessage(chat_id=chat_id, text=f"{vidttl}{audioUrl}")
+        #bot.sendAudio(chat_id = chat_id, audio = audioUrl)
         return 'ok'
     return 'error'
 
