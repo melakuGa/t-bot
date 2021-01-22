@@ -26,7 +26,7 @@ def webhook():
         vid         =pafy.new(str(text))
         vidttl      = str(vid.title)
         audio       = vid.getbestaudio()
-        audioUrl    = str(audio.url[0])
+        audioUrl    = str(audio.url(1))
         
         first_name  = update.effective_chat.first_name
         user = update.effective_chat.username
